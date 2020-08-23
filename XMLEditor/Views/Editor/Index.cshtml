@@ -1,0 +1,154 @@
+﻿@model XMLEditor.Models.XMLNodeModel
+
+@{
+    ViewBag.Title = "Edit XML";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>
+    Edit <span>@ViewBag.fielName</span>.xml
+    <span style="float:right">
+        <button type="button" onclick="saveData()"> Save </button>
+    </span>
+</h2>
+
+@helper BuildTemplate(XMLEditor.Models.XMLNodeModel nodeModel, bool isRoot)
+{
+    <table cellpadding="5" cellspacing="5" border="1" width="100%">
+        <thead>
+            <tr>
+                <th colspan="2" align="center">
+                    @(isRoot ? "Root" : "Child") Node: @nodeModel.NodeName
+                </th>
+            </tr>
+            <tr>
+                @if (nodeModel.Attributes.Count > 0)
+                {
+                    <th>
+                        Attributes
+                    </th>
+                }
+                @if (nodeModel.ChildNodes.Count > 0 && !isRoot)
+                {
+                    <th>
+                        Childs
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @if (nodeModel.Attributes.Count > 0)
+                {
+                    <td valign="top">
+                        <table cellpadding="5" cellspacing="5" border="1" width="100%">
+                            @foreach (var attributeKey in nodeModel.Attributes.Keys)
+                            {
+                                <tr>
+
+                                    <td align="right" style="padding-right:5px;">@attributeKey</td>
+                                    <td><input type="text" value="@nodeModel.Attributes[attributeKey]" onchange="javascript: updateData('@nodeModel.NodeID', '@attributeKey', this.value);" style="width:100%;" /></td>
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                }
+                @if (nodeModel.ChildNodes.Count > 0 && !isRoot)
+                {
+                    <td valign="top">
+                        <table cellpadding="5" cellspacing="5" border="1" width="100%">
+                            @foreach (var childNode in nodeModel.ChildNodes)
+                            {
+                                <tr>
+                                    <td valign="top">
+                                        @BuildTemplate(childNode, false)
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                }
+            </tr>
+        </tbody>
+    </table>
+}
+
+<div style="font-family:'Courier New'">
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td id="node_root">
+                    @BuildTemplate(Model, true)
+                </td>
+            </tr>
+            @if (Model.ChildNodes.Count > 0)
+            {
+                for (var i = 0; i < Model.ChildNodes.Count - 1; i++)
+                {
+                    <tr id="node_@i" style="display:none;">
+                        <td>
+                            @BuildTemplate(Model.ChildNodes[i], false)
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td>
+                        <a href="javascript:displayPage('root');">Root</a>
+                        @for (var i = 0; i < Model.ChildNodes.Count - 1; i++)
+                        {
+                            <span>
+                                | <a href="javascript:displayPage(@i);">Page @(i+1)</a>
+                            </span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<script type="text/javascript">
+    var currentPage = 'root';
+    function displayPage(page) {
+        $('#node_' + currentPage).hide();
+        $('#node_' + page).show();
+        currentPage = page;
+        return false;
+    };
+
+    function updateData(nodeID, attributeKey, attributeValue) {
+        var node = getNodeByID(nodeID, payload);
+        node.Attributes[attributeKey] = attributeValue;
+        console.log(payload);
+    };
+
+    function getNodeByID(nodeID, parent) {
+        if (parent.NodeID === nodeID)
+            return parent;
+        else {
+            for (var i = 0; i < parent.ChildNodes.length; i++) {
+                var foundNode = getNodeByID(nodeID, parent.ChildNodes[i]);
+                if (foundNode !== null) {
+                    return foundNode;
+                }
+            }
+        }
+        return null;
+    }
+
+    function saveData() {
+        $.post("@Url.Action("Save", "Editor")?fileName=@ViewBag.fielName", payload, function (data) {
+            if (data.success) {
+                alert('Data Saved!');
+            }
+            else {
+                alert(data.error);
+            }
+        });
+    }
+    var payload = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+    console.log(payload);
+</script>

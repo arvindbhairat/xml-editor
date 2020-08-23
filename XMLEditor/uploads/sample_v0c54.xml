@@ -1,0 +1,530 @@
+<Update Client="NCR dddd" Cell="UPDATE" IU="0805" PS="Win7" Version="03.00" CreatedOn="19-04-2020" CreatedBy="Amrit" VerifiedOn="" VerifiedBy="veri" Checksum="">
+  <Description Details="This update is meant only for the Fresh." />
+  <Contacts Name="Desk" contact_Name="" Number="" />
+  <Contacts Name="Manager" contact_Name="" Number="" />
+  <Contacts Name="Vendor" contact_Name="" Number="" />
+  <Contacts Name="Distribution" contact_Name="" Number="" />
+  <Contacts Name="Others" contact_Name="" Number="" />
+  <PreRequisite Id="1" Details="This Update has to be loaded." />
+  <PreRequisite Id="2" Details="Make sure." />
+  <PreRequisite Id="3" Details="Change." />
+  <PreRequisite Id="4" Details="Set." />
+  <PreRequisite Id="5" Details="menu." />
+  <CassetteConfiguration Device="Dis" Type="2" Details="10" />
+  <CassetteConfiguration Device="Dis" Type="3" Details="50" />
+  <CassetteConfiguration Device="Dis" Type="4" Details="100" />
+  <Install Id="1" Name="Upgrade" Enable="N">
+    <Option Id="1" Name="Upgrade" Version="" Path="Upgrade" Enable="Y">
+      <Command SequenceId="1" CommandString="upgrade1233" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="3" Name="Patches" Enable="Y">
+    <Option Id="1" Name="7Patch" Version="" Path="7Patch" Enable="Y">
+      <Command SequenceId="1" CommandString="7_Patch" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="License" RebootRequired="N" Enable="N" />
+      <Command SequenceId="3" CommandString="SHUTD" RebootRequired="Y" Enable="Y" />
+    </Option>
+    <Option Id="1" Name="10Patch" Version="" Path="10Patches" Enable="Y">
+      <Command SequenceId="1" CommandString="10Patches" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="4" Name="GRAPHICS" Enable="Y">
+    <Option Id="1" Name="GRAPHICS" Version="" Path="GRAPHICS" Enable="Y">
+      <Command SequenceId="1" CommandString="Graphics" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="5" Name="PROPERTIES" Enable="Y">
+    <Option Id="1" Name="PROPERTIES" Version="" Path="PROPERTIES" Enable="Y">
+      <Command SequenceId="1" CommandString="properties" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="roperty" Value="" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="3" Name="PROVIDER" Enable="Y">
+    <Option Id="1" Name="PROVIDER" Version="" Path="UNINSTALL" Enable="Y">
+      <Command SequenceId="1" CommandString="Provider" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="8" Name="PATCHES" Enable="Y">
+    <Option Id="1" Name="Patches" Version="01.09.00" Path="ATCHES" Enable="N">
+      <Command SequenceId="1" CommandString="Patches" RebootRequired="Y" Enable="Y" />
+      <Verify Type="FILE" Check="Extract" Value="" Enable="Y" />
+    </Option>
+    <Option Id="2" Name="atches" Version="" Path="PATCHES" Enable="Y">
+      <Command SequenceId="1" CommandString="Patches" RebootRequired="Y" Enable="Y" />
+      <Verify Type="FILE" Check="Extract" Value="" Enable="Y" />
+    </Option>
+    <Option Id="3" Name="Patches" Version="" Path="PATCHES" Enable="Y">
+      <Command SequenceId="1" CommandString="Patches" RebootRequired="Y" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="9" Name="DC" Enable="N">
+    <Option Id="1" Name="DC 04" Version="04.01" Path="DC" Enable="Y">
+      <Command SequenceId="1" CommandString="DC_04.04" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="2" Name="04.01" Version="04.01" Path="DC" Enable="N">
+      <Command SequenceId="1" CommandString="DC_04.01" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="3" Name="DC" Version="0501" Path="DC" Enable="Y">
+      <Command SequenceId="1" CommandString="DC" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="10" Name="DC_PATCHES" Enable="Y">
+    <Option Id="1" Name="DC_Patches" Version="02.00" Path="DC_PATCHES" Enable="Y">
+      <Command SequenceId="1" CommandString="DCPatches_04" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="DC" Value="" Enable="Y" />
+    </Option>
+    <Option Id="2" Name="DC_01_Patches" Version="01.00" Path="DC_PATCHES" Enable="Y">
+      <Command SequenceId="1" CommandString="NDCPatches_05" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="9" Name="CLEAR" Enable="Y">
+    <Option Id="1" Name="CLEAR" Version="01.00" Path="CLEAR" Enable="Y">
+      <Command SequenceId="1" CommandString="CLEAR" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="11" Name="MP" Enable="N">
+    <Option Id="1" Name="MP" Version="03.00" Path="MP" Enable="Y">
+      <Command SequenceId="1" CommandString="MP_03.00" RebootRequired="Y" Enable="Y" />
+      <Registry Name="Code" Enable="Y" Path="MP" Key="Code" Type="SZ" Value="0000000000000000-0000000000000000-0000000000400000-00000003000003BD" />
+      <Registry Name="AP_1" Enable="Y" Path="MP\Managers" Key="1" Type="REG_SZ" Value="127.127.127.00" />
+    </Option>
+  </Install>
+  <Install Id="8" Name="SELF" Enable="N">
+    <Option Id="1" Name="SELF" Version="00.00.00" Path="SELF" Enable="Y">
+      <Command SequenceId="1" CommandString="SELF" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="13" Name="SELF1" Enable="N">
+    <Option Id="1" Name="SELF1" Version="02.00.00" Path="NA" Enable="Y">
+      <Command SequenceId="1" CommandString="SELF1" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="14" Name="SELF Template" Enable="N">
+    <Option Id="1" Name="SELF Template" Version="00.00.00" Path="SELF_TEMPLATE" Enable="Y">
+      <Command SequenceId="1" CommandString="SELFQW" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="15" Name="SELF TRA" Enable="N">
+    <Option Id="1" Name="SELF TRA" Version="0.00.0000" Path="SELF_TRA" Enable="Y">
+      <Command SequenceId="1" CommandString="SELF_TRA" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="16" Name="SELF_TEMPLATE" Enable="N">
+    <Option Id="1" Name="TEMPLATE" Version="00.00.00" Path="TEMPLATE" Enable="Y">
+      <Command SequenceId="1" CommandString="TEMPLATE" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Files" Value="" Enable="Y" />
+    </Option>
+    <Option Id="1" Name="TEMPLATE" Version="00.00.00.00" Path="TEMPLATE" Enable="Y">
+      <Command SequenceId="1" CommandString="TEMPLATE" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Files" Value="" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="18" Name="EXITS" Enable="Y">
+    <Option Id="1" Name="EXITS" Version="00.00.00.00" Path="EXITS" Enable="Y">
+      <Command SequenceId="1" CommandString="EXITS" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Exits" Value="" Enable="Y" />
+    </Option>
+    <Option Id="1" Name="EXITS" Version="00.00.00" Path="EXITS" Enable="Y">
+      <Command SequenceId="1" CommandString="EXITS" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="10" Name="DC" Enable="Y">
+    <Option Id="1" Name="DC_Default" Version="0.00.00" Path="DC_\DC_" Enable="Y">
+      <Command SequenceId="1" CommandString="DC_Customisations" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="2" Name="DC_Customisations" Version="00.00.00" Path="DC_CUSTOMISATIONS_Customisations" Enable="N">
+      <Command SequenceId="1" CommandString="DC_CUSTOMISATIONS" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="3" Name="DC_Customisations" Version="01.00.00" Path="DC_CUSTOMISATIONS_Customisations" Enable="N">
+      <Command SequenceId="1" CommandString="DC_CUSTOMISATIONS_DC_D" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="4" Name="DC_Customisations" Version="01.00.00" Path="DC_CUSTOMISATIONS_Customisations" Enable="N">
+      <Command SequenceId="1" CommandString="DC_CUSTOMISATIONS_Customisations_WNI" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="5" Name="DC_V" Version="0.0" Path="DC_CUSTOMISATIONS" Enable="Y">
+      <Command SequenceId="1" CommandString="DC_CUSTOMISATIONS__Customisations" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="6" Name="DC " Version="0.0" Path="DC_CUSTOMISATIONS" Enable="Y">
+      <Command SequenceId="1" CommandString="DC_CUSTOMISATIONS\DC_Customisations\DC" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="7" Name="DC " Version="4.4" Path="DC_CUSTOMISATIONS" Enable="Y">
+      <Command SequenceId="1" CommandString="DC_CUSTOMISATIONS\DC_0.0_Customisations" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="19" Name="DC" Enable="Y">
+    <Option Id="1" Name="DC Config" Version="" Path="DC_CUSTOMISATIONS" Enable="Y">
+      <Verify Type="FILE" Check="Program Files" Value="" Enable="Y" />
+      <Verify Type="FILE" Check="Program Files" Value="" Enable="Y" />
+      <CDI Name="Track 1" Enable="Y" StoreId="3124" Value="3" />
+      <CDI Name="width" Enable="Y" StoreId="3153" Value="40" />
+      <CDI Name="Print" Enable="Y" StoreId="3057" Value="3" />
+      <CDI Name="Digit 1" Enable="Y" StoreId="3087" Value="1" />
+      <CDI Name="Message 2" Enable="Y" StoreId="1022" Value="1" />
+      <CDI Name="Message 3" Enable="Y" StoreId="1023" Value="2" />
+      <CDI Name="Message 4" Enable="Y" StoreId="1024" Value="3" />
+      <CDI Name="Message 5" Enable="Y" StoreId="1025" Value="0" />
+      <CDI Name="Message 6" Enable="Y" StoreId="1026" Value="0" />
+      <CDI Name="Message 7" Enable="Y" StoreId="1027" Value="6" />
+      <CDI Name="Message 8" Enable="Y" StoreId="1028" Value="4" />
+      <CDI Name="Message 9" Enable="Y" StoreId="1029" Value="4" />
+      <CDI Name="ResetMode" Enable="Y" StoreId="3108" Value="2" />
+      <CDI Name="Set" Enable="Y" StoreId="3073" Value="3" />
+      <CDI Name="Option80" Enable="Y" StoreId="3756" Value="1" />
+      <CDI Name="Option37" Enable="N" StoreId="3342" Value="1" />
+      <CDI Name="Option44" Enable="N" StoreId="3218" Value="1" />
+      <CDI Name="Option45" Enable="N" StoreId="1318" Value="79" />
+      <CDI Name="Option71" Enable="Y" StoreId="3762" Value="0" />
+      <CDI Name="Set" Enable="Y" StoreId="3004" Value="1" />
+      <CDI Name="Sup" Enable="Y" StoreId="3001" Value="1778" />
+      <Registry Name="Level" Enable="Y" Path="Advance DC" Key="Level" Type="REG" Value="0" />
+      <Registry Name="Level" Enable="Y" Path="Advance DC\" Key="Level" Type="REG" Value="3" />
+      <Registry Name="Mode" Enable="Y" Path="Advance DC\Options" Key="EJMode" Type="REG_DWORD" Value="1" />
+      <Registry Name="Backups" Enable="Y" Path="DC\EOptions" Key="NoOfBackups" Type="REG_DWORD" Value="1000" />
+      <Registry Name="Compression" Enable="Y" Path="DC\Options" Key="EJCompression" Type="REG_DWORD" Value="0" />
+      <Registry Name="BACKUPECP" Enable="Y" Path="DC\Options" Key="EJBACKUPECP" Type="REG_DWORD" Value="0" />
+      <Registry Name="Cutover" Enable="Y" Path="DC\Options" Key="EJCutover" Type="REG_DWORD" Value="1" />
+      <Registry Name="Agent" Enable="Y" Path="DC\Options" Key="EJAgent" Type="REG_DWORD" Value="1" />
+      <Registry Name="SecondaryBkp" Enable="Y" Path="DC\Options" Key="SecondaryBkp" Type="REG_SZ" Value="M:" />
+      <Registry Name="FolderPath" Enable="Y" Path="DC\Options" Key="FolderPath" Type="REG_SZ" Value="\SecEJBackups\" />
+      <Registry Name="Destination" Enable="Y" Path="DC\Options" Key="MultipleDestination" Type="REG_DWORD" Value="1" />
+      <Registry Name="Checksum" Enable="Y" Path="DC\Options" Key="EJChecksum" Type="REG_DWORD" Value="1" />
+      <Registry Name="FileSize" Enable="Y" Path="DC\EJOptions" Key="EJFileSize" Type="REG_DWORD" Value="10240" />
+      <Registry Name="ectCD" Enable="Y" Path="DC\EJOptions" Key="EjectCD" Type="REG_DWORD" Value="1" />
+      <Registry Name="FileDateFormat" Enable="Y" Path="DC\Options" Key="EJFileDateFormat" Type="REG_SZ" Value="yyyymmdd" />
+      <Registry Name="Recurrence" Enable="Y" Path="DC\Options" Key="EJRecurrence" Type="REG_DWORD" Value="1" />
+      <Registry Name="RecurrencePattern" Enable="Y" Path="DC\currenceOptions" Key="EJRecurrencePattern" Type="REG_DWORD" Value="1" />
+      <Registry Name="Time" Enable="Y" Path="DC\Options" Key="Time" Type="REG_DWORD" Value="2359" />
+      <Registry Name="DOW" Enable="Y" Path="DC\Options" Key="DOW" Type="REG_DWORD" Value="0" />
+      <Registry Name="DOM" Enable="Y" Path="DC\Options" Key="DOM" Type="REG_DWORD" Value="1" />
+    </Option>
+  </Install>
+  <Install Id="20" Name="LESS" Enable="Y">
+    <Option Id="1" Name="LESS" Version="" Path="" Enable="Y">
+      <Registry Name="ACTIVE" Enable="Y" Path="DC\less " Key="Active FDK Mask" Type="REG_DWORD" Value="8" />
+      <Registry Name="Active P" Enable="Y" Path="DC\less " Key="Active PIN Pad Key Mask" Type="REG_DWORD" Value="0" />
+      <Registry Name="State Number" Enable="Y" Path="DC\less " Key="Next State Number" Type="REG_SZ" Value="922" />
+      <Registry Name="Search" Enable="Y" Path="DC\less" Key="SkipFitSearch" Type="REG_DWORD" Value="1" />
+      <Registry Name="Track" Enable="Y" Path="DC\less" Key="Track" Type="REG_SZ" Value=";2345000000053=100010000?" />
+    </Option>
+  </Install>
+  <Install Id="23" Name="Camera" Enable="N">
+    <Option Id="1" Name="Camera" Version="" Path="Camera" Enable="Y">
+      <Command SequenceId="1" CommandString="Camera" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="24" Name="Print" Enable="N">
+    <Option Id="1" Name="Print" Version="" Path="" Enable="Y">
+      <Registry Name="Print" Enable="Y" Path="Print" Key="Print" Type="REG_Dword" Value="1" />
+      <Verify Type="REG" Check="Print" Value="1" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="26" Name="File" Enable="N">
+    <Option Id="1" Name="File " Version="" Path="File" Enable="Y">
+      <Command SequenceId="1" CommandString="File" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="17" Name="LESS" Enable="Y">
+    <Option Id="1" Name="LESS" Version="" Path="" Enable="Y">
+      <Registry Name="less" Enable="Y" Path="DC\less" Key="EnableXFSSessionForContactless" Type="REG_DWORD" Value="0" />
+      <Registry Name="Service" Enable="Y" Path="HKEY_Software\Software\Software\Software\Software Self-Service Support (Software Features)\Software\Software Software\Software\Software1" Key="Service Variant" Type="REG_DWORD" Value="0" />
+    </Option>
+  </Install>
+  <Install Id="27" Name="GIL" Enable="Y">
+    <Option Id="1" Name="GIL" Version="00.00.00" Path="GIL" Enable="Y">
+      <Command SequenceId="1" CommandString="GIL\" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="GIL\" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="gil" Value="" Enable="Y" />
+      <Verify Type="FILE" Check="gil" Value="" Enable="Y" />
+      <Verify Type="FILE" Check="gil" Value="" Enable="Y" />
+      <Verify Type="FILE" Check="gil" Value="" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="28" Name="Stinger" Enable="Y">
+    <Option Id="1" Name="Stinger" Version="" Path="Stir" Enable="Y">
+      <Command SequenceId="1" CommandString="Stir" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="29" Name="SM" Enable="Y">
+    <Option Id="1" Name="SM" Version="" Path="SM" Enable="Y">
+      <Command SequenceId="1" CommandString="SM\SM" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="1" CommandString="SM_\SM" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="12" Name="GUIDENCE" Enable="Y">
+    <Option Id="1" Name="GUIDENCE" Version="01.00" Path="ENGINE" Enable="Y">
+      <Command SequenceId="1" CommandString="ENGINE\" RebootRequired="N" Enable="N" />
+      <Command SequenceId="2" CommandString="Install_" RebootRequired="N" Enable="Y" />
+      <Registry Name="Enable " Enable="Y" Path="DC" Key="Enable" Type="REG_DWORD" Value="00000000" />
+      <Registry Name="00ier" Enable="Y" Path="DC\Guidance" Key="00Multiplier" Type="REG_DWORD" Value="00000000" />
+      <Registry Name="Next State" Enable="Y" Path="WOW" Key="VGNextState" Type="REG_SZ" Value="13069" />
+      <Registry Name="Translator" Enable="Y" Path="WOW" Key="Translator" Type="REG_DWORD" Value="00000000" />
+    </Option>
+  </Install>
+  <Install Id="19" Name="FOR" Enable="Y">
+    <Option Id="1" Name="_FOR_" Version="" Path="FOR" Enable="Y">
+      <Command SequenceId="1" CommandString="FOR_\" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="FOR_\" RebootRequired="Y" Enable="Y" />
+      <Command SequenceId="3" CommandString="FOR_\00\" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Setup" Value="" Enable="Y" />
+      <Verify Type="FILE" Check="Setup" Value="" Enable="Y" />
+    </Option>
+    <Option Id="1" Name="FOR" Version="" Path="_FOR_" Enable="Y">
+      <Command SequenceId="1" CommandString="_FOR_" RebootRequired="Y" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="14" Name="_Script" Enable="Y">
+    <Option Id="1" Name="Script" Version="" Path="" Enable="Y">
+      <Command SequenceId="1" CommandString="Script" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="31" Name="WS" Enable="Y">
+    <Option Id="1" Name="WS" Version="" Path="SERVICES" Enable="Y">
+      <Command SequenceId="1" CommandString="SERVICES" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="SERVICES" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="1" CommandString="SERVICES" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="32" Name="INSTALLER" Enable="Y">
+    <Option Id="1" Name="INSTALLER" Version="05.00.00" Path="_INSTALLER" Enable="Y">
+      <Command SequenceId="1" CommandString="_INSTALLER\_05.00.00" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="1" Name="_INSTALLER" Version="06.01.00" Path="NSTALLER" Enable="Y">
+      <Command SequenceId="1" CommandString="INSTALLER" RebootRequired="Y" Enable="Y" />
+    </Option>
+    <Option Id="1" Name="INSTALLER" Version="06.00.00" Path="INSTALLER" Enable="N">
+      <Command SequenceId="1" CommandString="INSTALLER" RebootRequired="Y" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="34" Name="Printing" Enable="N">
+    <Option Id="1" Name="Printing Enable" Version="" Path="" Enable="Y">
+      <Registry Name="is" Enable="Y" Path="VC" Key="isMultiLingual" Type="REG_SZ" Value="1" />
+      <Verify Type="REG" Check="SOFTWARE" Value="1" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="36" Name="NM" Enable="N">
+    <Option Id="1" Name="UPS" Version="" Path="NM" Enable="Y">
+      <Command SequenceId="1" CommandString="NM\  =1" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Logs" Value="" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="37" Name="UPS" Enable="Y">
+    <Option Id="1" Name="Switching" Version="" Path="NM\UPS" Enable="Y">
+      <Command SequenceId="1" CommandString="UPS" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="2" Name="_Power_" Version="" Path="UPS" Enable="Y">
+      <Command SequenceId="1" CommandString="Ups_" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="38" Name="SOFTWARE" Enable="Y">
+    <Option Id="1" Name="Agent" Version="" Path="Agent" Enable="Y">
+      <Command SequenceId="1" CommandString="Agent_6.2.1" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="2" Name="MS" Version="" Path="Agent" Enable="N">
+      <Command SequenceId="1" CommandString="MS\" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Agent" Value="" Enable="Y" />
+    </Option>
+    <Option Id="3" Name="view" Version="" Path="Agent" Enable="N">
+      <Command SequenceId="1" CommandString="Readonly" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="Install" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="C:\ProAgent" Value="" Enable="Y" />
+    </Option>
+    <Option Id="4" Name="Ra" Version="" Path="Agent" Enable="N">
+      <Command SequenceId="1" CommandString="Install" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="UIShell" Value="" Enable="Y" />
+    </Option>
+    <Option Id="5" Name="Agent" Version="" Path="Agent" Enable="N">
+      <Command SequenceId="1" CommandString="install" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="ware" Value="" Enable="Y" />
+    </Option>
+    <Option Id="6" Name="_Agent" Version="" Path="Agent" Enable="N">
+      <Command SequenceId="1" CommandString="Agent\smart" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="SmartX Agent" Value="" Enable="Y" />
+    </Option>
+    <Option Id="7" Name="M" Version="" Path="Agent" Enable="N">
+      <Command SequenceId="1" CommandString="_install" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="CST" Value="" Enable="Y" />
+    </Option>
+    <Option Id="8" Name="tAgent" Version="" Path="Installer" Enable="Y">
+      <Command SequenceId="1" CommandString="it_Agent_Setup" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="9" Name="eAgent" Version="" Path="eAgent" Enable="Y">
+      <Command SequenceId="1" CommandString="\eAgent" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="10" Name="TATA" Version="" Path="Agent" Enable="N">
+      <Command SequenceId="1" CommandString="\Install.vbs" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="ata" Value="" Enable="Y" />
+    </Option>
+    <Option Id="11" Name="Prima" Version="" Path="_3.0.1" Enable="Y">
+      <Command SequenceId="1" CommandString="_3.0.1\Aggr" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="_3.0.1\In" RebootRequired="Y" Enable="Y" />
+      <Command SequenceId="3" CommandString="_3.0.1\S" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="12" Name="CheckSum" Version="" Path="WDAgent" Enable="N">
+      <Command SequenceId="1" CommandString="Sum\Install" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Checksum" Value="" Enable="Y" />
+    </Option>
+    <Option Id="13" Name="CheckUtility" Version="" Path="WDAgent" Enable="N">
+      <Command SequenceId="1" CommandString="CheckUtility" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Mon" Value="" Enable="Y" />
+    </Option>
+    <Option Id="14" Name="MS" Version="0.0.0" Path="MS" Enable="N">
+      <Command SequenceId="1" CommandString="setup" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="15" Name="File" Version="0.0" Path="File" Enable="N">
+      <Command SequenceId="1" CommandString="InfoBase_0.0" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="40" Name="Antivirus" Enable="N">
+    <Option Id="1" Name="tec" Version="" Path="Antivirus" Enable="Y">
+      <Command SequenceId="1" CommandString="Install" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="2" Name="Micro" Version="" Path="Antivirus" Enable="N">
+      <Command SequenceId="1" CommandString="_Antivirus" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="42" Name="Configuration" Enable="N">
+    <Option Id="1" Name="Configuration" Version="" Path="" Enable="Y">
+      <Registry Name="CurrencyID" Enable="Y" Path="\CurrencyTable" Key="CurrencyID" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTable" Enable="Y" Path="CurrencyTable" Key="Value" Type="REG_SZ" Value="1" />
+      <Registry Name="CurrencyID" Enable="Y" Path="CurrencyTabl" Key="CurrencyID" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTable" Enable="Y" Path="CurrencyTable" Key="Value" Type="REG_SZ" Value="100" />
+      <Registry Name="CurrencyID" Enable="Y" Path="CurrencyTable" Key="CurrencyID" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTable" Enable="Y" Path="CurrencyTable" Key="Value" Type="REG_SZ" Value="500" />
+      <Registry Name="CurrencyID" Enable="Y" Path="CurrencyTable" Key="CurrencyID" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTable" Enable="Y" Path="CurrencyTab" Key="Value" Type="REG_SZ" Value="1000" />
+      <Registry Name="CurrencyIDType1" Enable="Y" Path="PROVIDERS" Key="CurrencyIDType1" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="SERVICE" Key="ValuesType1" Type="REG_SZ" Value="1" />
+      <Registry Name="CurrencyIDType2" Enable="Y" Path="SERVICE" Key="CurrencyIDType2" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_PROVIDERS" Key="ValuesType2" Type="REG_SZ" Value="100" />
+      <Registry Name="CurrencyIDType3" Enable="Y" Path="_PROVIDERS" Key="CurrencyIDType3" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_PROVIDERS" Key="ValuesType3" Type="REG_SZ" Value="500" />
+      <Registry Name="CurrencyIDType4" Enable="Y" Path="CONFIGS" Key="CurrencyIDType4" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="CONFIGS" Key="ValuesType4" Type="REG_SZ" Value="1000" />
+      <Registry Name="CurrencyIDType1" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType1" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType1" Type="REG_SZ" Value="1" />
+      <Registry Name="CurrencyIDType2" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType2" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType2" Type="REG_SZ" Value="100" />
+      <Registry Name="CurrencyIDType3" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType3" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType3" Type="REG_SZ" Value="500" />
+      <Registry Name="CurrencyIDType4" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType4" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType4" Type="REG_SZ" Value="1000" />
+      <Registry Name="CurrencyIDType1" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType1" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyIDType2" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType2" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyIDType3" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType3" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyIDType4" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType4" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType1" Type="REG_SZ" Value="00000001" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType2" Type="REG_SZ" Value="00000100" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType3" Type="REG_SZ" Value="00000500" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType4" Type="REG_SZ" Value="00001000" />
+      <Registry Name="CurrencyIDType1" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType1" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyIDType2" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType2" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyIDType3" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType3" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyIDType4" Enable="Y" Path="_CONFIGS" Key="CurrencyIDType4" Type="REG_SZ" Value="INR" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType1" Type="REG_SZ" Value="00000001" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType2" Type="REG_SZ" Value="00000100" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="CONFIGS" Key="ValuesType3" Type="REG_SZ" Value="00000500" />
+      <Registry Name="CurrencyTableValues" Enable="Y" Path="_CONFIGS" Key="ValuesType4" Type="REG_SZ" Value="00001000" />
+    </Option>
+  </Install>
+  <Install Id="43" Name="Config_" Enable="N">
+    <Option Id="1" Name="Bio" Version="" Path="" Enable="Y">
+      <Registry Name="TEMPLATE" Enable="Y" Path="Algo" Key="TEMPLATE STANDARD" Type="REG_DWORD" Value="00000000" />
+      <Registry Name="ALGO" Enable="Y" Path="Algo" Key="ALGO REPORTED" Type="REG_DWORD" Value="00000048" />
+      <Verify Type="FILE" Check="Kernel" Value="" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="44" Name="SCR" Enable="N">
+    <Option Id="1" Name="English Hindi" Version="" Path="SCREENS" Enable="Y">
+      <Command SequenceId="1" CommandString="_ENG_HIN_SCREENS" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="46" Name="_POLICY" Enable="Y">
+    <Option Id="1" Name="_POLICY" Version="" Path="_POLICY" Enable="Y">
+      <Command SequenceId="1" CommandString="Policy" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="1" CommandString="0_Policies.vbs" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="47" Name="VC" Enable="N">
+    <Option Id="1" Name="VC" Version="" Path="" Enable="Y">
+      <Registry Name="Level" Enable="Y" Path="F" Key="Print_Acc_On_Journal_Cardless" Type="REG" Value="0" />
+      <Registry Name="_Cardless" Enable="Y" Path="VC" Key="Print_Acc_On_Journal_Cardless" Type="REG" Value="0" />
+      <Registry Name="Print" Enable="Y" Path="VC" Key="Print_Acc_On_Journal" Type="REG_DWORD" Value="0" />
+      <Registry Name="Replace_" Enable="Y" Path="VC" Key="Replace_K_By_000" Type="REG_DWORD" Value="0" />
+      <Registry Name="Status" Enable="Y" Path="VC" Key="Change_Supply_Fitness_Status" Type="REG_DWORD" Value="0" />
+      <Registry Name="Change_Supply_Fitness" Enable="Y" Path="VC" Key="Change_Supply_Fitness" Type="REG_DWORD" Value="0" />
+      <Registry Name="Remove_From_Message" Enable="Y" Path="VC" Key="Remove_From_Message" Type="REG_DWORD" Value="0" />
+      <Registry Name="Multilingual_Printing" Enable="Y" Path="VC" Key="Multilingual_Printing" Type="REG_DWORD" Value="0" />
+      <Registry Name="Star_By_Five" Enable="Y" Path="VC" Key="Star_By_Five" Type="REG_DWORD" Value="0" />
+      <Registry Name="Send_Configuration_Information" Enable="Y" Path="VC" Key="Send_Configuration_Information" Type="REG_DWORD" Value="1" />
+    </Option>
+  </Install>
+  <Install Id="48" Name="OOKS" Enable="N">
+    <Option Id="1" Name="OOKS" Version="" Path="" Enable="Y">
+      <Registry Name="Journal-CustomerTimeOut" Enable="Y" Path="ooks" Key="IEFJournal-CustomerTimeOut" Type="REG_DWORD" Value="0" />
+      <Registry Name="IEFJournal-BRMCounters" Enable="Y" Path="ooks" Key="IEFJournal-BRMCounters" Type="REG_DWORD" Value="0" />
+    </Option>
+  </Install>
+  <Install Id="50" Name="ONFIGURATIONS" Enable="Y">
+    <Option Id="1" Name="SPECIFIC" Version="" Path="SPECIFIC" Enable="Y">
+      <Command SequenceId="1" CommandString="Datalist.html" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="49" Name="Agent" Enable="Y">
+    <Option Id="1" Name="Agent" Version="" Path="_AGENT" Enable="Y">
+      <Command SequenceId="1" CommandString="_Default" RebootRequired="N" Enable="N" />
+      <Command SequenceId="2" CommandString="_AGENT" RebootRequired="N" Enable="N" />
+      <Command SequenceId="3" CommandString="_AGENT" RebootRequired="N" Enable="N" />
+      <Command SequenceId="4" CommandString="NT\Install" RebootRequired="N" Enable="N" />
+      <Command SequenceId="5" CommandString="_AGENT" RebootRequired="N" Enable="N" />
+      <Command SequenceId="6" CommandString="Insta" RebootRequired="N" Enable="N" />
+      <Command SequenceId="7" CommandString="Install" RebootRequired="N" Enable="N" />
+      <Command SequenceId="8" CommandString="Install" RebootRequired="N" Enable="N" />
+      <Command SequenceId="9" CommandString="Instal" RebootRequired="N" Enable="Y" />
+      <Verify Type="FILE" Check="Files" Value="" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="49" Name="UP" Enable="Y">
+    <Option Id="1" Name="UP" Version="" Path="UP" Enable="Y">
+      <Command SequenceId="1" CommandString="_System" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="_Cleanup" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="3" CommandString="CLEANUP" RebootRequired="N" Enable="N" />
+    </Option>
+  </Install>
+  <Install Id="26" Name="Final" Enable="Y">
+    <Option Id="1" Name="_Final" Version="" Path="_Final" Enable="Y">
+      <Command SequenceId="1" CommandString="Services" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="Access" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="3" CommandString="Cleanup" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="4" CommandString="_Cleanup" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="27" Name="ENABLE" Enable="Y">
+    <Option Id="1" Name="ENABLE" Version="" Path="enable" Enable="Y">
+      <Command SequenceId="1" CommandString="Enabl" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="2" Name="EPO" Version="" Path="ENABLE" Enable="N">
+      <Command SequenceId="1" CommandString="core" RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="3" Name="ENABLE" Version="" Path="ENABLE" Enable="N">
+      <Command SequenceId="1" CommandString="Enable" RebootRequired="Y" Enable="Y" />
+    </Option>
+    <Verify Type="FILE" Check="core" Value="" Enable="Y" />
+  </Install>
+  <Install Id="52" Name="Check" Enable="Y">
+    <Option Id="1" Name="Check" Version="" Path="" Enable="Y">
+      <Command SequenceId="1" CommandString="Check" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+  <Install Id="28" Name="SK_EN" Enable="Y">
+    <Option Id="1" Name="ON_OFF" Version="" Path="ON\" Enable="Y">
+      <Command SequenceId="1" CommandString="Mode" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="NE" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="3" CommandString="y_E." RebootRequired="N" Enable="Y" />
+    </Option>
+    <Option Id="1" Name="ONLINE" Version="" Path="ENCRYPTION" Enable="Y">
+      <Command SequenceId="1" CommandString="Update" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="2" CommandString="Install" RebootRequired="N" Enable="Y" />
+      <Command SequenceId="3" CommandString="Solidi" RebootRequired="N" Enable="Y" />
+    </Option>
+  </Install>
+</Update>
